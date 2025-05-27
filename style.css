@@ -1,0 +1,32 @@
+body {
+  background-color: #f4f4f4;
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+#loginForm input {
+  font-size: 16px;
+}
+
+.btn-primary {
+  background-color: #36a2eb;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #1e88e5;
+}
+
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+  }
+
+  .login-right {
+    display: none;
+  }
+}
