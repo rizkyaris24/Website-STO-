@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard - STO Surveyor Indonesia</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+  <!-- ✅ Hamburger Button -->
+  <button id="toggleSidebar" class="btn btn-dark position-absolute top-0 start-0 m-3 z-3">
+    ☰
+  </button>
+
+  <div class="d-flex h-100">
+    
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar d-flex flex-column text-white">
+      <div class="logo-box p-3 text-center border-bottom">
+        <img src="ptsi.png" alt="Surveyor Logo" style="width: 100px;" class="mb-2" />
+        <img src="idsurvey.png" alt="IDSurvey Logo" style="width: 50px;" />
+      </div>
+
+      <div class="menu flex-grow-1 d-flex flex-column p-2">
+
+        <!-- Dropdown 1 -->
+        <div class="dropdown">
+          <a class="menu-item dropdown-toggle" data-bs-toggle="collapse" href="#insightSub" role="button">
+            INSIGHT
+          </a>
+          <div class="collapse" id="insightSub">
+            <a href="insightReserve.html" class="submenu-item">Reservasi Agenda INSIGHT</a>
+            <a href="#" class="submenu-item">Kalender INSIGHT</a>
+          </div>
+        </div>
+
+        <!-- Dropdown 2 -->
+        <div class="dropdown mt-2">
+          <a class="menu-item dropdown-toggle" data-bs-toggle="collapse" href="#newsletterSub" role="button">
+            Newsletter & Outlook
+          </a>
+          <div class="collapse" id="newsletterSub">
+            <a href="#" class="submenu-item">STO Outlook & SI-BRIGHT</a>
+            <a href="#" class="submenu-item">Newsletter</a>
+          </div>
+        </div>
+
+        <!-- Dropdown 3 -->
+        <div class="dropdown mt-2">
+          <a class="menu-item dropdown-toggle" data-bs-toggle="collapse" href="#lifeSub" role="button">
+            Life at SI
+          </a>
+          <div class="collapse" id="lifeSub">
+            <a href="#" class="submenu-item">Culture</a>
+            <a href="#" class="submenu-item">Activities</a>
+          </div>
+        </div>
+        
+
+      </div>
+    </div>
+
+    <!-- Main Content -->
+<main class="d-flex align-items-center justify-content-center w-100" style="min-height: 100vh; padding: 2rem;">
+  <div class="container">
+    <h3 class="text-center fw-bold mb-4">Reservasi Agenda INSIGHT</h3>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 justify-content-center">
+
+      <!-- INSIGHT Talk -->
+      <div class="col">
+        <div class="card h-100 text-center">
+          <div class="card-body">
+            <h5 class="card-title">INSIGHT Talk</h5>
+            <p class="text-muted small text-start">
+              <strong>Format:</strong> Keynote speaker / Panel Discussion<br>
+              <strong>Tujuan:</strong> Membagikan pendapat ahli (topik strategi, update transformasi, insight leaders)<br>
+              <strong>Participants:</strong> >1 Keynote / >1 Panels & 1 Moderator<br>
+              <strong>Interaksi:</strong> antara panelis, moderator, QnA<br>
+              <strong>Output:</strong> Pemahaman/awareness transformasi
+            </p>
+            <a href="#" class="btn btn-primary">Pilih</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- INSIGHT Discovery -->
+      <div class="col">
+        <div class="card h-100 text-center">
+          <div class="card-body">
+            <h5 class="card-title">INSIGHT Discovery</h5>
+            <p class="text-muted small text-start">
+              <strong>Format:</strong> Mini Workshop / Hands-on / Learning Session / Focus Group Discussion<br>
+              <strong>Tujuan:</strong> Meningkatkan kemampuan teknis dan mendapatkan feedback dari partisipan<br>
+              <strong>Participants:</strong> Terpilih + fasilitator<br>
+              <strong>Interaksi:</strong> Praktik langsung & diskusi<br>
+              <strong>Output:</strong> Feedback teknis, ide baru, konsensus<br>
+              <strong>Contoh:</strong> Kendala adopsi digital, SOUL-SI Try-Out
+            </p>
+            <a href="#" class="btn btn-primary">Pilih</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- INSIGHT Pop-Up -->
+      <div class="col">
+        <div class="card h-100 text-center">
+          <div class="card-body">
+            <h5 class="card-title">INSIGHT Pop-Up</h5>
+            <p class="text-muted small text-start">
+              <strong>Format:</strong> Video singkat (maks. 7 menit)<br>
+              <strong>Tujuan:</strong> Membagikan informasi transformasi singkat<br>
+              <strong>Contoh:</strong> 3 Minutes on Progress PDP
+            </p>
+            <a href="#" class="btn btn-primary">Pilih</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- INSIGHT Outlook -->
+      <div class="col">
+        <div class="card h-100 text-center">
+          <div class="card-body">
+            <h5 class="card-title">INSIGHT Outlook</h5>
+            <p class="text-muted small text-start">
+              <strong>Format:</strong> Newsletter digital, bulanan<br>
+              <strong>Tujuan:</strong> Informasi terkini tentang transformasi dan outlook bisnis
+            </p>
+            <a href="#" class="btn btn-primary">Pilih</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Sidebar toggle logic
+    document.getElementById('toggleSidebar').addEventListener('click', function () {
+      document.getElementById('sidebar').classList.toggle('collapsed-sidebar');
+    });
+  </script>
+</body>
+</html>
