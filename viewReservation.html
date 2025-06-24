@@ -2,20 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dashboard - STO Surveyor Indonesia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reservasi Agenda INSIGHT</title>
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="dashboard.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="bg-light">
+
   <!-- Hamburger Button -->
-  <button id="toggleSidebar" class="btn btn-dark position-absolute top-0 start-0 m-3 z-3">
-    ☰
-  </button>
+  <button id="toggleSidebar" class="btn btn-dark position-absolute top-0 start-0 m-3 z-3">☰</button>
 
   <div class="d-flex h-100">
-    
+
     <!-- Sidebar -->
     <div id="sidebar" class="sidebar d-flex flex-column text-white">
       <div class="logo-box p-3 text-center border-bottom">
@@ -24,61 +24,56 @@
       </div>
 
       <div class="menu flex-grow-1 d-flex flex-column p-2">
-
-        <!-- Dropdown 1 -->
         <div class="dropdown">
-          <a class="menu-item dropdown-toggle" data-bs-toggle="collapse" href="#insightSub" role="button">
-            INSIGHT
-          </a>
+          <a class="menu-item dropdown-toggle" data-bs-toggle="collapse" href="#insightSub" role="button">INSIGHT</a>
           <div class="collapse" id="insightSub">
             <a href="insightReserve.html" class="submenu-item">Reservasi Agenda INSIGHT</a>
             <a href="viewReservation.html" class="submenu-item">Kalender INSIGHT</a>
           </div>
         </div>
 
-        <!-- Dropdown 2 -->
         <div class="dropdown mt-2">
-          <a class="menu-item dropdown-toggle" data-bs-toggle="collapse" href="#newsletterSub" role="button">
-            Newsletter & Outlook
-          </a>
+          <a class="menu-item dropdown-toggle" data-bs-toggle="collapse" href="#newsletterSub" role="button">Newsletter & Outlook</a>
           <div class="collapse" id="newsletterSub">
             <a href="#" class="submenu-item">STO Outlook & SI-BRIGHT</a>
             <a href="#" class="submenu-item">Newsletter</a>
           </div>
         </div>
 
-        <!-- Dropdown 3 -->
         <div class="dropdown mt-2">
-          <a class="menu-item dropdown-toggle" data-bs-toggle="collapse" href="#lifeSub" role="button">
-            Life at SI
-          </a>
+          <a class="menu-item dropdown-toggle" data-bs-toggle="collapse" href="#lifeSub" role="button">Life at SI</a>
           <div class="collapse" id="lifeSub">
             <a href="#" class="submenu-item">Culture</a>
             <a href="#" class="submenu-item">Activities</a>
           </div>
         </div>
-        
-
       </div>
     </div>
 
-    <!-- Main Content -->
-    <div class="content flex-grow-1 d-flex flex-column justify-content-center align-items-center text-center">
-      <h1 class="mb-4">Welcome to<br/>Strategic Transformation Office<br/><strong>INSIGHT - SI</strong></h1>
-      <div class="circle-wrapper position-relative">
-        <img src="central-graphic.png" alt="Central Icons" class="img-fluid" style="max-width: 500px;" />
-      </div>
-    </div>
+<!-- Main Content -->
+<main class="flex-grow-1">
+  <h2 class="text-center mb-3" id="calendarTitle"></h2>
+  <div class="d-flex justify-content-center mb-2">
+    <button id="prevMonth" class="btn btn-outline-primary me-2">&lt; Prev</button>
+    <button id="nextMonth" class="btn btn-outline-primary">Next &gt;</button>
   </div>
+  <div class="calendar" id="calendarGrid"></div>
 
-  <!-- Bootstrap JS -->
+  <!-- TABLE -->
+  <h4 class="text-center mt-4">Agenda INSIGHT</h4>
+  <div class="table-responsive mt-2">
+    <table class="table table-bordered table-striped text-center">
+      <thead class="table-light">
+        <tr><th>Tanggal</th><th>Agenda</th></tr>
+      </thead>
+      <tbody id="agendaTableBody"></tbody>
+    </table>
+  </div>
+</main>
+
+
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    // Sidebar toggle logic
-    document.getElementById('toggleSidebar').addEventListener('click', function () {
-      document.getElementById('sidebar').classList.toggle('collapsed-sidebar');
-    });
-  </script>
   <script src="script.js"></script>
 </body>
 </html>

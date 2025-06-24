@@ -35,3 +35,32 @@ h1 {
   transition: height 0.3s ease;
 }
 
+main {
+  margin-left: 270px;
+  padding: 2rem;
+  height: 100vh;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.calendar-day {
+  padding: 10px;
+  border: 1px solid #ccc;
+  min-height: 60px;
+  text-align: center;
+}
+
+.calendar-day .circle {
+  border: 2px solid red;
+  border-radius: 50%;
+  padding: 2px;
+  display: inline-block;
+  min-width: 28px;
+}
+
