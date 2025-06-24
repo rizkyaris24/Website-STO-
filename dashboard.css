@@ -1,6 +1,7 @@
 html, body {
   height: 100%;
   margin: 0;
+  overflow: hidden; /* hide overflow on the whole page */
   font-family: 'Segoe UI', sans-serif;
 }
 
@@ -9,7 +10,10 @@ html, body {
   background-color: #2196f3;
   color: white;
   height: 100vh;
-  overflow-y: auto;
+  position: fixed;    /* ✅ Fixed so it's always visible */
+  top: 0;
+  left: 0;
+  overflow: hidden;   /* ✅ Disable scroll in sidebar */
   transition: transform 0.3s ease;
   z-index: 2;
 }
@@ -19,6 +23,16 @@ html, body {
   color: black;
 }
 
+/* Main content — make sure to offset the sidebar width */
+main {
+  margin-left: 270px;      /* ✅ Offset the fixed sidebar width */
+  padding: 2rem;
+  height: 100vh;
+  overflow-y: auto;         /* ✅ Scrollable main content */
+  box-sizing: border-box;
+}
+
+/* Menu items */
 .menu-item {
   display: block;
   padding: 15px 20px;
@@ -84,6 +98,10 @@ html, body {
     top: 0;
     bottom: 0;
     left: 0;
+  }
+
+  main {
+    margin-left: 0; /* ✅ On small screens, let the sidebar overlap */
   }
 
   .collapsed-sidebar {

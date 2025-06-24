@@ -30,3 +30,8 @@ h1 {
     display: none;
   }
 }
+
+.collapse {
+  transition: height 0.3s ease;
+}
+
