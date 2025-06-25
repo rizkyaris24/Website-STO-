@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-  // ==================== LOGIN PAGE ==================== //
   const loginForm = document.getElementById('loginForm');
   if (loginForm) {
     loginForm.addEventListener('submit', function (e) {
@@ -21,7 +20,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // ==================== RESERVATION FORM ==================== //
   const reservationForm = document.querySelector('form[action="#"]');
   if (reservationForm) {
     reservationForm.addEventListener('submit', function (e) {
@@ -47,7 +45,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // ==================== SIDEBAR TOGGLE ==================== //
   const sidebarToggle = document.getElementById('toggleSidebar');
   if (sidebarToggle) {
     sidebarToggle.addEventListener('click', function () {
@@ -55,7 +52,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // ==================== CALENDAR + TABLE ==================== //
   const reservations = JSON.parse(localStorage.getItem('insightReservations') || '[]');
   const reservationDates = reservations.reduce((acc, r) => {
     acc[r.tanggal] = true;
@@ -64,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   let currentDate = new Date();
   const calendarGrid = document.getElementById('calendarGrid');
-  const agendaTableBody = document.getElementById('agendaTableBody'); // Ensure you have this tbody id
+  const agendaTableBody = document.getElementById('agendaTableBody'); 
 
   function drawCalendar(date) {
     let html = `
@@ -96,8 +92,8 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('calendarTitle').textContent =
       `${date.toLocaleString('default', {month: 'long'})} ${year}`;
 
-    // ✅ Fill table
-    fillAgendaTable(year, month + 1); // pass 1-based month to match date strings
+
+    fillAgendaTable(year, month + 1); 
   }
 
   document.getElementById('prevMonth')?.addEventListener('click', () => {
@@ -110,7 +106,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   drawCalendar(currentDate);
 
-  // ==================== Fill Table ==================== //
   function fillAgendaTable(year, month) {
     if (!agendaTableBody) return;
     agendaTableBody.innerHTML = '';
